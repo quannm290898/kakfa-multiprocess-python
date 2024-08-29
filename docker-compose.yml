@@ -1,0 +1,19 @@
+version: '3.8'
+
+networks:
+  kafka-multiprocess-service:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: .
+    container_name: kafka-multiprocess
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      - .:/app
+    command: python -u main.py
+    networks:
+      - kafka-multiprocess-service
+
