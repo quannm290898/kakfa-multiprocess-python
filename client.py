@@ -36,28 +36,28 @@ class Client:
                 print("Send message to topic: {}".format(topic))
                 messages_topic = self.create_random_message(topic=topic)
                 push_all_message_kafka(bootstrap_servers=self.bootstrap_servers, topic=topic, messages=messages_topic)
-            # time.sleep(60)
-            # list_topic_second = create_random_topics(20, 'second')
-            # print("Push message to 10 topic kafka!")
-            # create_topic_kafka(bootstrap_servers=self.bootstrap_servers, topics=list_topic_second)
-            # for topic in list_topic_second:
-            #     print("Send message to topic: {}".format(topic))
-            #     messages_topic = self.create_random_message(topic=topic)
-            #     push_all_message_kafka(bootstrap_servers=self.bootstrap_servers, topic=topic, messages=messages_topic)
-            # time.sleep(30)
-            # list_topic_second = create_random_topics(50, 'third')
-            # print("Push message to 10 topic kafka!")
-            # create_topic_kafka(bootstrap_servers=self.bootstrap_servers, topics=list_topic_second)
-            # for topic in list_topic_second:
-            #     print("Send message to topic: {}".format(topic))
-            #     messages_topic = self.create_random_message(topic=topic)
-            #     push_all_message_kafka(bootstrap_servers=self.bootstrap_servers, topic=topic, messages=messages_topic)
-            # time.sleep(30)
-            # print("Push message to 50 topic old kafka!")
-            # for topic in list_topic_first:
-            #     print("Send message to topic: {}".format(topic))
-            #     messages_topic = self.create_random_message(topic=topic)
-            #     push_all_message_kafka(bootstrap_servers=self.bootstrap_servers, topic=topic, messages=messages_topic)
+            time.sleep(60)
+            list_topic_second = create_random_topics(20, 'second')
+            print("Push message to 20 topic kafka!")
+            create_topic_kafka(bootstrap_servers=self.bootstrap_servers, topics=list_topic_second)
+            for topic in list_topic_second:
+                print("Send message to topic: {}".format(topic))
+                messages_topic = self.create_random_message(topic=topic)
+                push_all_message_kafka(bootstrap_servers=self.bootstrap_servers, topic=topic, messages=messages_topic)
+            time.sleep(30)
+            list_topic_second = create_random_topics(50, 'third')
+            print("Push message to 50 topic kafka!")
+            create_topic_kafka(bootstrap_servers=self.bootstrap_servers, topics=list_topic_second)
+            for topic in list_topic_second:
+                print("Send message to topic: {}".format(topic))
+                messages_topic = self.create_random_message(topic=topic)
+                push_all_message_kafka(bootstrap_servers=self.bootstrap_servers, topic=topic, messages=messages_topic)
+            time.sleep(30)
+            print("Push message to 50 topic old kafka!")
+            for topic in list_topic_first:
+                print("Send message to topic: {}".format(topic))
+                messages_topic = self.create_random_message(topic=topic)
+                push_all_message_kafka(bootstrap_servers=self.bootstrap_servers, topic=topic, messages=messages_topic)
 
 
 if __name__ == '__main__':
